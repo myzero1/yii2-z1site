@@ -10,7 +10,7 @@ class Module extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
-    public $controllerNamespace = 'backend\modules\z1site\controllers';
+    public $controllerNamespace = 'myzero1\z1site\controllers';
 
     /**
      * {@inheritdoc}
