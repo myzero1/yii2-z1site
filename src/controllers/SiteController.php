@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'test', 'e403', 'e404', 'e500'],
+                        'actions' => ['login', 'error', 'placeholder', 'e403', 'e404', 'e500'],
                         'allow' => true,
                     ],
                     [
@@ -143,5 +143,14 @@ class SiteController extends Controller
     public function actionE500()
     {
         return $this->render('e500');
+    }
+
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionPlaceholder($position = 'default')
+    {
+        return $this->render('placeholder', ['position' => $position]);
     }
 }
