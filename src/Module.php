@@ -20,5 +20,7 @@ class Module extends \yii\base\Module
         parent::init();
 
         // custom initialization code goes here
+
+        // var_dump(\Yii::$app->getRuntimePath());exit;
     }
 }
