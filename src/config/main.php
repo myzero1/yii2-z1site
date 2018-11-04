@@ -4,7 +4,6 @@ return [
     'id' => 'z1site-backend',
     'basePath' => myzero1\z1site\components\MainLoader::getAppPath(),
     'runtimePath' => myzero1\z1site\components\MainLoader::getAppPath() . '/runtime', //basePath,runtimePath,vendorPath,timeZone
-    // 'controllerNamespace' => 'backend\controllers',
     'controllerNamespace' => 'myzero1\z1site\controllers',
     'bootstrap' => ['log'],
     'modules' => [
