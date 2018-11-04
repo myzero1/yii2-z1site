@@ -26,7 +26,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'main', 'notice'],
+                        'actions' => ['logout', 'index', 'main', 'notice', 'clear-assets-cache'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
