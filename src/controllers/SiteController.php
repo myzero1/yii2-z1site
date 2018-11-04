@@ -22,11 +22,11 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'test'],
+                        'actions' => ['login', 'error', 'test', 'e403', 'e404', 'e500'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'main', 'notice'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -99,16 +99,49 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+
     /**
-     * Logout action.
-     *
+     * Renders the main msg of site
      * @return string
      */
-    public function actionTest()
+    public function actionMain()
     {
-        var_dump('actionTest');exit;
-        Yii::$app->user->logout();
+        return $this->render('main');
+    }
 
-        return $this->goHome();
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionNotice()
+    {
+        return $this->render('notice');
+    }
+
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionE403()
+    {
+        return $this->render('e403');
+    }
+
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionE404()
+    {
+        return $this->render('e404');
+    }
+
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionE500()
+    {
+        return $this->render('e500');
     }
 }

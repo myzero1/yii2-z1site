@@ -32,9 +32,8 @@ return [
             'bundles'=> [
                 'myzero1\layui\assets\php\components\LayoutAsset' => [
                     // 'copyright' => '<p><span>copyright @2018-2038 myzero1</span></p>', // false
-                    // 'copyright' => false
-                    'noticeUrl' => '/gii',
-                    // 'noticeUrl' => false,
+                    'noticeUrl' => '/site/notice',
+                    'mainUrl' => '/site/main',
                 ],
             ],
         ],
