@@ -1,5 +1,4 @@
 <?php
-$params = [];
 
 return [
     'id' => 'z1site-backend',
@@ -14,6 +13,9 @@ return [
         ],
         'z1user' => [
             'class' => 'myzero1\z1user\Module',
+        ],
+        'layui' => [
+            'class' => 'myzero1\layui\Module',
         ],
     ],
     'components' => [
@@ -69,5 +71,5 @@ return [
             ],
         ],
     ],
-    'params' => $params,
+    'params' => require __DIR__ . '/params.php',
 ];
