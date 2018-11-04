@@ -70,6 +70,12 @@ return [
                 "spread" => false
             ],
             [
+                "title" => "静态缓存",
+                "icon" => "&#xe638;",
+                "href" => "/site/clear-assets-cache",
+                "spread" => false
+            ],
+            [
                 "title" => "403页面",
                 "icon" => "&#xe638;",
                 "href" => "/site/e403",
