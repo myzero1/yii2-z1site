@@ -153,4 +153,13 @@ class SiteController extends Controller
     {
         return $this->render('placeholder', ['position' => $position]);
     }
+
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionClearAssetsCache()
+    {
+        return $this->render('placeholder', ['position' => $position]);
+    }
 }
