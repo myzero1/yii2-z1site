@@ -61,7 +61,7 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'z1site/site/error',
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,

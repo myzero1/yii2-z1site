@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'placeholder', 'e403', 'e404', 'e500'],
+                        'actions' => ['login', 'error', 'placeholder'],
                         'allow' => true,
                     ],
                     [
