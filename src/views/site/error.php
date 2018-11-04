@@ -13,7 +13,7 @@ $statusCode = Yii::$app->getResponse()->statusCode;
 if ($statusCode == 403) {
     $message = '叫你乱跑，没权限被拦住了吧！';
 } else if ($statusCode == 500) {
-    $message = '>内部错误，有的人要扣奖金了吧！';
+    $message = '内部错误，有的人要扣奖金了吧！';
 }
 
 

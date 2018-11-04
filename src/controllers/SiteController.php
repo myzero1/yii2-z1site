@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'placeholder'],
+                        'actions' => ['login', 'error', 'placeholder', 'e403', 'e404', 'e500'],
                         'allow' => true,
                     ],
                     [
@@ -124,7 +124,7 @@ class SiteController extends Controller
      */
     public function actionE403()
     {
-        return $this->render('e403');
+        throw new \yii\web\HttpException(403);
     }
 
     /**
@@ -133,7 +133,7 @@ class SiteController extends Controller
      */
     public function actionE404()
     {
-        return $this->render('e404');
+        throw new \yii\web\HttpException(404);
     }
 
     /**
@@ -142,7 +142,7 @@ class SiteController extends Controller
      */
     public function actionE500()
     {
-        return $this->render('e500');
+        throw new \yii\web\HttpException(500);
     }
 
     /**
