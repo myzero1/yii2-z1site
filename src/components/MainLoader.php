@@ -24,7 +24,7 @@ class MainLoader extends Component
      * For example,
      *
      * ```php
-     *    myzero1\z1site\components\MainLoader::loader(function(){
+     *    return myzero1\z1site\components\MainLoader::loader(function(){
      *      return sprintf('%s/vendor/myzero1/yii2-z1site/src/config/main.php', dirname(dirname(__DIR__)));
      *       // return sprintf('%s/modules/z1site/config/main.php', dirname(__DIR__));
      *  });
