@@ -19,11 +19,25 @@ return [
         ],
     ],
     'components' => [
+        'errorHandler' => [
+            'errorAction' => 'z1site/site/error',
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'rules' => [
+                '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1site/<controller>/<action>'
+            ],
+        ],
+        'user' => [
+            'identityClass' => 'myzero1\z1site\models\User',
+            'enableAutoLogin' => true,
+            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+        ],
         'view' => [
             'theme' => [
                 'pathMap' => [
-                    // '@app/views' => '@vendor/myzero1/yii2-theme-adminlteiframe/src/views/adminlteiframe', // using the adminlte theme
-                    '@app/views' => '@vendor/myzero1/yii2-theme-layui/src/views', // using the adminlteiframe theme
+                    '@app/views' => '@vendor/myzero1/yii2-theme-layui/src/views', // using the layui theme
                 ],
             ],
         ],
@@ -31,21 +45,9 @@ return [
             'class' => 'yii\web\AssetManager',
             'forceCopy' => true,
             // 'linkAssets' => true,//link to assets,no cache.used in develop.
-            'bundles'=> [
-                'myzero1\layui\assets\php\components\LayoutAsset' => [
-                    // 'copyright' => '<p><span>copyright @2018-2038 myzero1</span></p>', // false
-                    'noticeUrl' => '/site/notice',
-                    'mainUrl' => '/site/main',
-                ],
-            ],
         ],
         'request' => [
             'csrfParam' => '_csrf-backend',
-        ],
-        'user' => [
-            'identityClass' => 'myzero1\z1site\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
@@ -58,16 +60,6 @@ return [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
-            ],
-        ],
-        'errorHandler' => [
-            'errorAction' => 'z1site/site/error',
-        ],
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-                '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1site/<controller>/<action>'
             ],
         ],
     ],
