@@ -16,7 +16,6 @@ if ($statusCode == 403) {
     $message = '内部错误，有的人要扣奖金了吧！';
 }
 
-
 ?>
 
 <?php if ($statusCode == 404): ?>

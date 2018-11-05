@@ -5,10 +5,9 @@ return [
     'basePath' => myzero1\z1site\components\MainLoader::getAppPath(),
     'runtimePath' => myzero1\z1site\components\MainLoader::getAppPath() . '/runtime', //basePath,runtimePath,vendorPath,timeZone
     'controllerNamespace' => 'myzero1\z1site\controllers',
-    'defaultRoute'=>'site',
     'bootstrap' => ['log'],
     'modules' => [
-        'z1site' => [
+        'z1siteid' => [ // z1siteid mybe ajust
             'class' => 'myzero1\z1site\Module',
         ],
         'z1user' => [
@@ -20,13 +19,13 @@ return [
     ],
     'components' => [
         'errorHandler' => [
-            'errorAction' => 'z1site/site/error',
+            'errorAction' => 'z1siteid/site/error', // z1siteid mybe ajust
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1site/<controller>/<action>'
+                '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1siteid/<controller>/<action>' // z1siteid mybe ajust
             ],
         ],
         'user' => [
