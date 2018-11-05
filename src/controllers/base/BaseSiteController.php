@@ -60,7 +60,7 @@ class BaseSiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'layout';
+        $this->layout = '@vendor/myzero1/yii2-theme-layui/src/views/layouts/layout';
         return $this->render('index');
     }
 
