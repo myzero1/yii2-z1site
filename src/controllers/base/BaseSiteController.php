@@ -160,6 +160,21 @@ class BaseSiteController extends Controller
      */
     public function actionClearAssetsCache()
     {
-        return $this->render('placeholder', ['position' => $position]);
+        if (\Yii::$app->request->isPost) {
+            $appPath = Yii::getAlias("@app");
+
+            $assetsOld = sprintf('%s/web/assets', $appPath);
+            $assetsNew = sprintf('%s/web/assets_%s', $appPath, time());
+            $gitignore = sprintf('%s/web/assets/.gitignore', $appPath);
+
+            // \yii\helpers\FileHelper::copyDirectory($assetsOld ,$assetsNew);
+            \yii\helpers\FileHelper::removeDirectory($assetsOld);
+            \yii\helpers\FileHelper::createDirectory($assetsOld);
+            file_put_contents($gitignore, "*\n!.gitignore");
+
+            \Yii::$app->getSession()->setFlash('success', '恭喜你，清空静态缓存成功。');
+        }
+
+        return $this->render('clear-assets-cache');
     }
 }
