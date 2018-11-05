@@ -5,6 +5,7 @@ return [
     'basePath' => myzero1\z1site\components\MainLoader::getAppPath(),
     'runtimePath' => myzero1\z1site\components\MainLoader::getAppPath() . '/runtime', //basePath,runtimePath,vendorPath,timeZone
     'controllerNamespace' => 'myzero1\z1site\controllers',
+    'defaultRoute'=>'site',
     'bootstrap' => ['log'],
     'modules' => [
         'z1site' => [
