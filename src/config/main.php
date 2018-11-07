@@ -4,13 +4,20 @@ return [
     'id' => 'z1site-backend',
     'basePath' => myzero1\z1site\components\MainLoader::getAppPath(),
     'runtimePath' => myzero1\z1site\components\MainLoader::getAppPath() . '/runtime', //basePath,runtimePath,vendorPath,timeZone
+    'aliases' => [
+        '@myzero1' => '@vendor/myzero1',
+    ],
     'controllerNamespace' => 'myzero1\z1site\controllers',
     'controllerMap' => [
-        'site' => 'myzero1\z1site\controllers\SiteController',
+        // 'site' => 'myzero1\z1site\controllers\SiteController',
         'extend' => 'myzero1\z1site\controllers\extendcontroller\ExtendController',
         'extendu' => 'myzero1\z1user\controllers\extendcontroller\ExtendController',
     ],
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'classMap' => function(){
+            \Yii::$classMap['myzero1\z1site\controllers\SiteController'] = '@app/modules/z1site/controllers/SiteController.php';
+        }
+    ],
     'modules' => [
         'z1siteid' => [ // z1siteid mybe ajust
             'class' => 'myzero1\z1site\Module',
@@ -30,7 +37,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                // '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1siteid/<controller>/<action>' // z1siteid mybe ajust
+                '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1siteid/<controller>/<action>' // z1siteid mybe ajust
             ],
         ],
         'user' => [

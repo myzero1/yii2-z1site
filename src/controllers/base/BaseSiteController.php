@@ -151,6 +151,7 @@ class BaseSiteController extends Controller
      */
     public function actionPlaceholder($position = 'default')
     {
+        // var_dump('actionPlaceholder');exit;
         return $this->render('placeholder', ['position' => $position]);
     }
 
