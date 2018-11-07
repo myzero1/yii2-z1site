@@ -67,4 +67,14 @@ class BaseActController extends Controller
         $model = new LoginForm();
         $model->add();
     }
+
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionClassDel()
+    {
+        $model = new LoginForm();
+        $model->del();
+    }
 }
