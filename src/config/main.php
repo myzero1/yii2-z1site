@@ -4,9 +4,6 @@ return [
     'id' => 'z1site-backend',
     'basePath' => myzero1\z1site\components\MainLoader::getAppPath(),
     'runtimePath' => myzero1\z1site\components\MainLoader::getAppPath() . '/runtime', //basePath,runtimePath,vendorPath,timeZone
-    'aliases' => [
-        '@myzero1' => '@vendor/myzero1',
-    ],
     'controllerNamespace' => 'myzero1\z1site\controllers',
     'bootstrap' => [
         'classMap' => function(){
