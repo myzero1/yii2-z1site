@@ -11,6 +11,7 @@ return [
     'bootstrap' => [
         'classMap' => function(){
             \Yii::$classMap['myzero1\z1site\controllers\ActController'] = '@vendor/myzero1/yii2-z1site/src/controllers/act/ActController.php';
+            \Yii::$classMap['myzero1\z1site\models\LoginForm'] = '@vendor/myzero1/yii2-z1site/src/models/rewrite/LoginForm.php';
         }
     ],
     'modules' => [

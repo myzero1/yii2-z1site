@@ -25,7 +25,7 @@ class BaseActController extends Controller
      * Renders the main msg of notice
      * @return string
      */
-    public function actionModify()
+    public function actionMod()
     {
         return $this->render('pd', ['position' => 'modified action']);
     }
@@ -34,7 +34,7 @@ class BaseActController extends Controller
      * Renders the main msg of notice
      * @return string
      */
-    public function actionModifyView()
+    public function actionModView()
     {
         return $this->render('pd', ['position' => 'modified view action']);
     }
@@ -43,8 +43,28 @@ class BaseActController extends Controller
      * Renders the main msg of notice
      * @return string
      */
-    public function actionDeled()
+    public function actionDel()
     {
         return $this->render('pd', ['position' => 'deled action']);
+    }
+
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionClassRewrite()
+    {
+        $model = new LoginForm();
+        $model->rewrite();
+    }
+
+    /**
+     * Renders the main msg of notice
+     * @return string
+     */
+    public function actionClassAdd()
+    {
+        $model = new LoginForm();
+        $model->add();
     }
 }

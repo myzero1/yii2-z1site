@@ -75,4 +75,14 @@ class BaseLoginForm extends Model
 
         return $this->_user;
     }
+
+    /**
+     * Finds user by [[username]]
+     *
+     * @return User|null
+     */
+    public function rewrite()
+    {
+        var_dump('rewrited  old');;exit;
+    }
 }
