@@ -8,14 +8,9 @@ return [
         '@myzero1' => '@vendor/myzero1',
     ],
     'controllerNamespace' => 'myzero1\z1site\controllers',
-    'controllerMap' => [
-        // 'site' => 'myzero1\z1site\controllers\SiteController',
-        'extend' => 'myzero1\z1site\controllers\extendcontroller\ExtendController',
-        'extendu' => 'myzero1\z1user\controllers\extendcontroller\ExtendController',
-    ],
     'bootstrap' => [
         'classMap' => function(){
-            \Yii::$classMap['myzero1\z1site\controllers\SiteController'] = '@app/modules/z1site/controllers/SiteController.php';
+            \Yii::$classMap['myzero1\z1site\controllers\ActController'] = '@vendor/myzero1/yii2-z1site/src/controllers/act/ActController.php';
         }
     ],
     'modules' => [
