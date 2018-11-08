@@ -96,6 +96,37 @@ You can then access home page to watch the theme.
 http://localhost/path/to/index.php
 ```
 
+#### rewrite ####
+
+* ` set rewrite `
+
+```php
+return [
+    ......
+    'bootstrap' => [
+        'classMap' => function(){
+            \Yii::$classMap['yii\captcha\CaptchaAction'] = '@app/components/libs/CaptchaAction.php';
+            \Yii::$classMap['myzero1\z1site\controllers\ActController'] = '@vendor/myzero1/yii2-z1site/src/controllers/act/ActController.php';
+            \Yii::$classMap['myzero1\z1site\models\LoginForm'] = '@vendor/myzero1/yii2-z1site/src/models/rewrite/LoginForm.php';
+        }
+    ],
+    ......
+];
+```
+
+* ` rewrite controller `
+
+Add and Modify action by classMap.
+
+Rewrite the view of action.through rewrite the beforeAction of controller.
+
+
+* ` rewrite class `
+
+You can add and rewrite the function of class, only use the classMap.
+
+
+
 LICENSE
 -----
 MIT
