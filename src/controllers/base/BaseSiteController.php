@@ -163,6 +163,17 @@ class BaseSiteController extends Controller
     {
         if (\Yii::$app->request->isPost) {
             $appPath = Yii::getAlias("@app");
+            $assets = sprintf('%s/web/assets', $appPath);
+            $list = scandir($assets);
+            foreach ($list as $k => $v) {
+                if(strpos($v,'asset_') === 0){ 
+                    $tmp = 'assets/'.$v;
+                    unlink($tmp);
+                }
+            }
+
+            /*
+            $appPath = Yii::getAlias("@app");
 
             $assetsOld = sprintf('%s/web/assets', $appPath);
             $assetsNew = sprintf('%s/web/assets_%s', $appPath, time());
@@ -172,6 +183,7 @@ class BaseSiteController extends Controller
             \yii\helpers\FileHelper::removeDirectory($assetsOld);
             \yii\helpers\FileHelper::createDirectory($assetsOld);
             file_put_contents($gitignore, "*\n!.gitignore");
+            */
 
             \Yii::$app->getSession()->setFlash('success', '恭喜你，清空静态缓存成功。');
         }
