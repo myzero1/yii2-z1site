@@ -3,6 +3,7 @@
 return [
     'id' => 'z1site-backend',
     'language' => 'zh-CN',
+    'name' => 'yii2-z1site',
     'basePath' => myzero1\z1site\components\MainLoader::getAppPath(),
     'runtimePath' => myzero1\z1site\components\MainLoader::getAppPath() . '/runtime', //basePath,runtimePath,vendorPath,timeZone
     'controllerNamespace' => 'myzero1\z1site\controllers',
@@ -32,7 +33,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1siteid/<controller>/<action>' // z1siteid mybe ajust
+                // '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1siteid/<controller>/<action>' // z1siteid mybe ajust
             ],
         ],
         'user' => [
@@ -49,7 +50,7 @@ return [
         ],
         'assetManager' => [
             'class' => 'yii\web\AssetManager',
-            'forceCopy' => true,
+            // 'forceCopy' => true,
             // 'linkAssets' => true,//link to assets,no cache.used in develop.
         ],
         'request' => [
