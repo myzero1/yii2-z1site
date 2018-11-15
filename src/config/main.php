@@ -33,7 +33,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                // '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1siteid/<controller>/<action>' // z1siteid mybe ajust
+                'site/captcha' => 'site/captcha', // z1siteid mybe ajust
+                '<controller:[\w\-]+>/<action:[\w\-]+>' => 'z1siteid/<controller>/<action>', // z1siteid mybe ajust
             ],
         ],
         'user' => [
