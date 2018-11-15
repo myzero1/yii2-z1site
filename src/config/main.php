@@ -51,7 +51,7 @@ return [
         ],
         'assetManager' => [
             'class' => 'yii\web\AssetManager',
-            // 'forceCopy' => true,
+            'forceCopy' => false,
             // 'linkAssets' => true,//link to assets,no cache.used in develop.
         ],
         'request' => [
