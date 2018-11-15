@@ -12,6 +12,7 @@ class BaseLoginForm extends Model
     public $username;
     public $password;
     public $rememberMe = true;
+    public $verifyCode;
 
     private $_user;
 
@@ -22,12 +23,39 @@ class BaseLoginForm extends Model
     public function rules()
     {
         return [
-            // username and password are both required
-            [['username', 'password'], 'required'],
+            // username, password and verifyCode are both required
+            [['username', 'password', 'verifyCode'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+            ['verifyCode', 'string', 'max' => 5, 'min' => 5],
+            ['verifyCode', 'captcha'],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+
+        // $scenarios['VC'] = ['verifyCode',];
+        // $scenarios['UP'] = ['username', 'password'];
+
+        return $scenarios;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => '代理账号',
+            'password' => '登录密码',
+            'verifyCode' => '验证码',
         ];
     }
 

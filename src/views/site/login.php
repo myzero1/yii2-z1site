@@ -60,6 +60,44 @@ $this->params['breadcrumbs'][] = $this->title;
                 'checked' => $model->rememberMe == '1' ? true : false,
             ])->label('') ?>
 
+
+            <?php
+
+                $captcha = yii\captcha\Captcha::widget([
+                    'name'=>'captchaimg',
+                    'captchaAction'=>'/z1siteid/site/captcha',
+                    'imageOptions'=>[
+                        'id'=>'captchaimg', 
+                        'title'=>'换一个', 
+                        'alt'=>'换一个', 
+                        'style'=>'
+                            cursor:pointer;
+                            border-left: 1px solid #dcdcdc;
+                            height: 32px;
+                            border-radius: 0 4px 4px 0;
+                            width: 125px;
+                        ',
+                    ],
+                    'template'=>'{image}'
+                ]);
+
+                echo $form->field($model, 'verifyCode', [
+                    'template' => "{label}\n{input}{hint}\n{error}",
+                    'hintOptions' => [
+                        'class' => 'hint-block',
+                        'style' => '
+                                position: absolute;
+                                top: 1px;
+                                right: 1px;
+                            ',
+                    ],
+                    'options' => [
+                        'class'=>'field-loginform-verifyCode form-group',
+                    ]
+                ])->textInput(['maxlength' => true])->hint($captcha);
+
+            ?>
+
             <div class="form-group">
                 <?= Html::submitButton('登录', ['class' => 'btn btn-primary', 'name' => 'login-button','style' => 'width:260px;']) ?>
             </div>
