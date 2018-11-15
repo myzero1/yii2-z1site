@@ -2,6 +2,7 @@
 
 return [
     'id' => 'z1site-backend',
+    'language' => 'zh-CN',
     'basePath' => myzero1\z1site\components\MainLoader::getAppPath(),
     'runtimePath' => myzero1\z1site\components\MainLoader::getAppPath() . '/runtime', //basePath,runtimePath,vendorPath,timeZone
     'controllerNamespace' => 'myzero1\z1site\controllers',
