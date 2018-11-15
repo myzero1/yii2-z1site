@@ -47,6 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'options' => [
                     'style' => '
                         width:400px;
+                        margin-bottom:20px;
                     ',
                 ],
             ])->checkbox([
