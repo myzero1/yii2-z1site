@@ -125,6 +125,6 @@ JS;
 
 $this->registerJs($js, \yii\web\View::POS_HEAD);
 $this->registerJs($js2);
-$this->registerJs('$("#captchaimg").click()');
+$this->registerJs('$("#captchaimg").click()');// refresh captcha
 
 ?>
