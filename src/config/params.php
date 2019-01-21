@@ -122,4 +122,52 @@ return [
         // 'skin' => false, // default true
         // 'copyright' => false,// default '<p><span>copyright @2018-2028 myzero1</span><a href="https://github.com/myzero1/yii2-theme-layui" target="_blank"><img class="layui-nav-img userAvatar" src="LayoutAssetBundleBaseUrl/resources/images/myzero1.jpg" style="margin-left:10px;cursor:pointer;"></a></p>'
     ],
+    'menu' => [
+        [
+            'id' => "平台首页",
+            'text' => "平台首页2",
+            'title'=>"平台首页",
+            'icon' => "fa fa-dashboard",
+            'targetType' => 'iframe-tab',
+            'urlType' => 'abosulte',
+            'url' => ['/z1siteid/site/index'],
+            'isHome' => true,
+        ],
+        [
+            'id' => "level1",
+            'text' => "level1",
+            'title'=>"level1",
+            'icon' => "fa fa-dashboard",
+            'targetType' => 'iframe-tab',
+            'urlType' => 'abosulte',
+            'url' => ['/z1siteid/site/level1'],
+        ],
+        [
+            'id' => "level2",
+            'text' => "level2",
+            'title'=>"level2",
+            'icon' => "fa fa-laptop",
+            'url' => ['#'],
+            'children' => [
+                [
+                    'id' => "level21",
+                    'text' => "level21",
+                    'title'=>"level21",
+                    'icon' => "fa fa-angle-double-right",
+                    'targetType' => 'iframe-tab',
+                    'urlType' => 'abosulte',
+                    'url' => ['/z1siteid/site/level21'],
+                ],
+                [
+                    'id' => "level22",
+                    'text' => "level22",
+                    'title'=>"level22",
+                    'icon' => "fa fa-angle-double-right",
+                    'targetType' => 'iframe-tab',
+                    'urlType' => 'abosulte',
+                    'url' => ['/z1siteid/site/level22'],
+                ],
+            ],
+        ],
+    ],
 ];
