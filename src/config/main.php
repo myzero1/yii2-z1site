@@ -23,12 +23,6 @@ return [
         'z1siteid' => [ // z1siteid mybe ajust
             'class' => 'myzero1\z1site\Module',
         ],
-        'z1user' => [
-            'class' => 'myzero1\z1user\Module',
-        ],
-        'layui' => [
-            'class' => 'myzero1\layui\Module',
-        ],
     ],
     'components' => [
         'view' => [
