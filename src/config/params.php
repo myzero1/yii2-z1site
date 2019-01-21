@@ -125,7 +125,7 @@ return [
     'menu' => [
         [
             'id' => "平台首页",
-            'text' => "平台首页2",
+            'text' => "平台首页 module",
             'title'=>"平台首页",
             'icon' => "fa fa-dashboard",
             'targetType' => 'iframe-tab',
