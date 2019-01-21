@@ -22,7 +22,7 @@ class BaseSiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error', 'captcha', 'placeholder', 'e403', 'e404', 'e500'],
+                        'actions' => ['login', 'error', 'captcha', 'placeholder', 'e403', 'e404', 'e500', 'level1', 'level21', 'level22'],
                         'allow' => true,
                     ],
                     [
@@ -73,7 +73,6 @@ class BaseSiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'layout';
         return $this->render('index');
     }
 
@@ -129,6 +128,36 @@ class BaseSiteController extends Controller
     public function actionNotice()
     {
         return $this->render('notice');
+    }
+
+    /**
+     * Demo page.
+     *
+     * @return string
+     */
+    public function actionLevel1()
+    {
+        return $this->render('@vendor/myzero1/yii2-theme-adminlteiframe/src/views/adminlteiframe/site/default');
+    }
+
+    /**
+     * Demo page.
+     *
+     * @return string
+     */
+    public function actionLevel21()
+    {
+        return $this->render('@vendor/myzero1/yii2-theme-adminlteiframe/src/views/adminlteiframe/site/default');
+    }
+
+    /**
+     * Demo page.
+     *
+     * @return string
+     */
+    public function actionLevel22()
+    {
+        return $this->render('@vendor/myzero1/yii2-theme-adminlteiframe/src/views/adminlteiframe/site/default');
     }
 
     /**
